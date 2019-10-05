@@ -14,9 +14,9 @@ after_success:
   - docker build -t bretonne/multi-server ./server
   - docker build -t bretonne/multi-worker ./worker
 # login to docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
 # take those into dockerhub
-- docker push bretonne/multi-client
-- docker push bretonne/multi-nginx
-- docker push bretonne/multi-server
-- docker push bretonne/multi-worker
+  - docker push bretonne/multi-client
+  - docker push bretonne/multi-nginx
+  - docker push bretonne/multi-server
+  - docker push bretonne/multi-worker
