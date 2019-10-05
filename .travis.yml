@@ -9,14 +9,14 @@ script:
   - docker run bretonnetx/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t bretonnetx/multi-client ./client
-  - docker build -t bretonnetx/multi-nginx ./nginx
-  - docker build -t bretonnetx/multi-server ./server
-  - docker build -t bretonnetx/multi-worker ./worker
+  - docker build -t multi-client ./client
+  - docker build -t multi-nginx ./nginx
+  - docker build -t multi-server ./server
+  - docker build -t multi-worker ./worker
 # login to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --pasword-stdin
 # take those into dockerhub
-  - docker push bretonnetx/multi-client
-  - docker push bretonnetx/multi-nginx
-  - docker push bretonnetx/multi-server
-  - docker push bretonnetx/multi-worker
+  - docker push bretonnetx/docker:multi-client
+  - docker push bretonnetx/docker:multi-nginx
+  - docker push bretonnetx/docker:multi-server
+  - docker push bretonnetx/docker:multi-worker
