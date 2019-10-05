@@ -24,7 +24,7 @@ services:
       - PGUSER=postgres
       - PGHOST=postgres
       - PGDATABASE=postgres
-      - PGPASSWORD=pastgres_password
+      - PGPASSWORD=pastgres
       - PGPORT=5432
   client:
     build:
